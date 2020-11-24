@@ -1,0 +1,12 @@
+<center><h2>Recipe List </h2></center>
+{% if data  %}
+    <ul>
+    {% for i in data %}
+        <li>
+            <a href = "/{{ i.id }}">{{ i.recipe }}</a>
+            <a href="/{{i.id}}" id = '{{i.recipe}}'>delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+<center><a href = "{% url 'creatobj' %}">Create Recipe</a></center>
